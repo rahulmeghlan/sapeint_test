@@ -4,6 +4,7 @@ $(document).ready(function(){
   $('#carousal_items').tinycarousel();
   navigateCarousal();
   checkEnrollmentInfo();
+  validateForm();
 });
 function insertHeader(){
   var content;
@@ -102,4 +103,46 @@ function getCourseDetails(courseID){
 //  });
   $(".carousal_text_area").html(info.text);
 
+}
+
+function validateForm(){
+  var isEmpty = false;
+  var emptyEls = [];
+  $("form").submit(function(){
+//    if(!$(".course_name").html().trim()) {
+//      alert("Please select a course to enroll");
+//      return false;
+//    }
+    _.each($(".form_input_h"), function(item, index){
+      if(!$(item).val().trim()){
+        isEmpty = true;
+        emptyEls.push(index);
+      }
+    });
+    if(isEmpty){
+      showErrorMsg(emptyEls);
+      return false;
+    }
+
+    if($(".form_input_h").attr("email").trim()) checkEmail();
+  });
+}
+
+function showErrorMsg(index){
+  removeErrorMessages();
+  _.each(index, function(val){
+    if(val == 0) $("form .name").append("<span class='error_msg'>* Please enter your full name</span>")
+    if(val == 2) $("form .email").append("<span class='error_msg'>* Please enter your email</span>")
+    if(val == 3) $("form .confirm_email").append("<span class='error_msg'>* Please re-enter your email</span>")
+    if(val == 4) $("form .mobile_number").append("<span class='error_msg'>* Please enter your mobile number</span>")
+  });
+}
+
+function removeErrorMessages(){
+  $(".error_msg").remove();
+}
+
+function checkEmail(){
+  var pattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9\_]+\.)+[a-zA-Z]{2,}))$/;
+  if(pattern.test($(".form_input_h[name='email']").val())) alert("valid");
 }

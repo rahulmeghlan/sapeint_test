@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
         "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Sapient Test Project</title>
     <!--Library files-->
@@ -19,7 +19,10 @@
 </head>
 <body>
 
-</body>
+<div class="top_container">
+    <div class="logo" style="background: url('images/sapient_logo.png') no-repeat;min-height: 50px;margin-top: -8px;"></div>
+</div>
+<div class="content_area">
 <div class="left_container">
     <div class="user_list"></div>
     <div class="carousal_navigation"></div>
@@ -63,26 +66,26 @@
         <form method="post" name="enrollmentForm" id="enrollmentForm">
             <div class="name">
                 Full Name
-                <input type="text" name="first_name" style="position: absolute;left:50%"/>
-                <input type="text" name="last_name"  style="position: absolute;left:62%" />
+                <input type="text" name="first_name" class="form_input_h" style="position: absolute;left:50%"/>
+                <input type="text" name="last_name" class="form_input_h"  style="position: absolute;left:60%" />
 
             </div>
             <div class="email">
                 Email Address
-                <input type="text" name="email" style="position: absolute;left:50%" />
+                <input type="text" class="form_input_h" name="email" style="position: absolute;left:50%" />
             </div>
             <div class="confirm_email">
                Confirm Email Address
-                <input type="text" name="confirm_email" style="position: absolute;left:50%"/>
+                <input type="text" class="form_input_h" name="confirm_email" style="position: absolute;left:50%"/>
             </div>
             <div class="mobile_number">
                 Mobile Number
-                <input type="text" name="mobile" style="position: absolute;left:50%"/>
+                <input type="text" class="form_input_h" name="mobile" style="position: absolute;left:50%"/>
             </div>
             <input type="submit" class="submit_btn">
         </form>
     </div>
 </div>
-
-
+</div>
+</body>
 </html>

@@ -1,16 +1,16 @@
-.left_container{
+.left_container {
     float: left;
-    width: 20%;
+    /*width: 20%;*/
 }
 
-.carousal_container{
+.carousal_container {
     float: left;
     width: 65%;
-    height:300px;
+    height: 300px;
     margin-left: 1%;
 }
 
-.enrollmentForm_container{
+.enrollmentForm_container {
     width: 65%;
     height: 200px;
     border: 1px solid #efefef;
@@ -18,56 +18,82 @@
     margin-top: 3%;
 }
 
-.clear{
-    clear:both;
+.clear {
+    clear: both;
 }
 
-.carousal_navigation{
+.carousal_navigation {
     margin-top: 2%;
-    border:1px solid red;
+    border: 1px solid red;
 }
 
-.user_list{
+.user_list {
     margin-top: 2%;
-    border: 3px solid green;
+    /*border: 3px solid green;*/
 }
 
-.carousal_image_area{
-height: 60%;
-border: 1px solid black;
+.carousal_image_area {
+    height: 60%;
+    border: 1px solid black;
 }
 
-.carousal_text_area{
+.carousal_text_area {
     border: 1px solid #efefef;
     background: #efefef;
     height: 40%;
 }
 
-.carousal_text_items{
+.carousal_text_items {
     text-overflow: ellipsis;
     overflow: hidden;
     width: 100%
 }
 
-.enrollmentForm_container .header_area{
+.enrollmentForm_container .header_area {
     background: #efefef;
 }
 
-.form_area{
+.form_area {
     text-overflow: ellipsis;
     overflow: hidden;
 }
 
-input[type=submit]{
+input[type=submit] {
     float: right;
     margin-top: 3%;
     border: 0px;
     background: #efefef;
 }
 
-.enroll_now_h{
+.enroll_now_h {
     position: absolute;
     bottom: 0px;
-    border:1px solid #000;
+    border: 1px solid #000;
     margin-left: 5%
+}
+
+.error_msg {
+    color: red;
+    float: right;
+}
+
+body {
+    padding-left: 1%;
+}
+
+.content_area {
+    margin-top: 2%;
+}
+
+table {
+    width: 100%;
+    border: 1px solid #000;
+}
+
+tr {
+    border: 1px solid #000;
+}
+
+thead {
+    background: #efefef;
 }
