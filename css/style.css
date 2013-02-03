@@ -39,7 +39,7 @@
 
 .carousal_text_area {
     border: 1px solid #efefef;
-    background: #efefef;
+    background: #9d9d9d;
     height: 40%;
 }
 
@@ -69,7 +69,8 @@ input[type=submit] {
     position: absolute;
     bottom: 0px;
     border: 1px solid #000;
-    margin-left: 5%
+    margin-left: 5%;
+    background: #d5d5d5;
 }
 
 .carousal_navigation_header{
@@ -100,5 +101,5 @@ tr {
 }
 
 thead {
-    background: #efefef;
+    background: #e1e1e1;
 }
