@@ -40,6 +40,9 @@
     border: 1px solid #efefef;
     background: #9d9d9d;
     height: 40%;
+    color:#616161;
+    font-family: Helvetica, sans-serif;
+    font-size: 13px;
 }
 
 .carousal_text_items {
@@ -71,6 +74,7 @@ input[type=submit] {
     float: right;
     margin-top: 0%;
     border: 1px solid #000;
+    text-transform: uppercase;
 }
 
 .enroll_now_h {
@@ -126,5 +130,10 @@ thead {
     left: 30%;
 }
 
-.submit_btn{
+/* CSS for top container */
+.logo {
+    background: url('../images/sapient_logo.png') no-repeat;
+    min-height: 50px;
+    margin-top: -8px;
+    margin-bottom: 20px;
 }
