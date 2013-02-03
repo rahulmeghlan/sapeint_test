@@ -44,9 +44,10 @@ function navigateCarousal() {
 
 function callCarousal(navigateTo) {
   getCourseDetails(navigateTo);
-  if (navigateTo == 0) navigateTo = 1;
-  if (navigateTo == 3) navigateTo = 2;
-  $("#carousal_items").tinycarousel_move(navigateTo);
+  var moveTo = navigateTo;
+  if (navigateTo == 0) moveTo = 1;
+  if (navigateTo == 3) moveTo = 2;
+  $("#carousal_items").tinycarousel_move(moveTo);
 }
 
 function checkEnrollmentInfo() {
@@ -79,18 +80,26 @@ function fillForm(enrollment_type) {
 function getCourseDetails(courseID) {
   var content;
 //  var url = "";
-//  switch(courseID){
-//    case "1":
-//      break
-//    case "2":
-//      break
-//    case "3":
-//      break
-//    case "4":
-//      break
-//    default :
-//      break
-//  }
+  switch(courseID){
+    case "0":
+      content = "<p class='course_name'>SapientNitro: " + distinguished_technologies.name + "</p>";
+      content += "<p class='course_details'>" + distinguished_technologies.text + "</p>";
+      break;
+    case "1":
+      content = "<p class='course_name'>SapientNitro: " + mobile_solutions.name + "</p>";
+      content += "<p class='course_details'>" + mobile_solutions.text + "</p>";
+      break;
+    case "2":
+      content = "<p class='course_name'>SapientNitro: " + canvas_course.name + "</p>";
+      content += "<p class='course_details'>" + canvas_course.text + "</p>";
+      break;
+    case "3":
+      content = "<p class='course_name'>SapientNitro: " + domain_expertise.name + "</p>";
+      content += "<p class='course_details'>" + domain_expertise.text + "</p>";
+      break;
+    default :
+      break;
+  }
 //  $.ajax({
 //    url : url,
 //    success:function(response){
@@ -103,8 +112,6 @@ function getCourseDetails(courseID) {
 //      console.log(response);
 //    }
 //  });
-  content = "<p style='color: #fff'>" + info.name + "</p>";
-  content += "<p>" + info.text + "</p>";
   $(".carousal_text_area").html(content);
 
 }
@@ -117,10 +124,10 @@ function validateForm() {
     clearErrorMessages();
     if (isEmpty) isEmpty = false;
     if (emptyEls.length) emptyEls = [];
-//    if(!$(".course_name").html().trim()) {
-//      alert("Please select a course to enroll");
-//      return false;
-//    }
+    if(!$(".course_name_selected_h").html().trim()) {
+      alert("Please select a course to enroll");
+      return false;
+    }
     _.each($(".form_input_h"), function(item, index) {
       if (!$(item).val().trim()) {
         isEmpty = true;

@@ -137,3 +137,16 @@ thead {
     margin-top: -8px;
     margin-bottom: 20px;
 }
+
+/*CSS for carousel items*/
+.course_name{
+    color : #f9f9f9;
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    padding: 0 2% 0 2%;
+}
+.course_details{
+    font-family: Helvetica, sans-serif;
+    font-size: 13px;
+    padding: 0 2% 2% 2%;
+}
