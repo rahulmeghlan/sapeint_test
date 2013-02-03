@@ -112,7 +112,11 @@ function getCourseDetails(courseID) {
 function validateForm() {
   var isEmpty = false;
   var emptyEls = [];
-  $("form").submit(function() {
+  $("form").submit(function(e) {
+    e.preventDefault();
+    clearErrorMessages();
+    if (isEmpty) isEmpty = false;
+    if (emptyEls.length) emptyEls = [];
 //    if(!$(".course_name").html().trim()) {
 //      alert("Please select a course to enroll");
 //      return false;
@@ -124,27 +128,58 @@ function validateForm() {
       }
     });
     if (isEmpty) {
-      showErrorMsg(emptyEls);
-      return false;
+      checkErrorMsg(emptyEls);
     }
 
-    if ($(".form_input_h").attr("email").trim()) checkEmail();
+    if($(".form_input_h[name='mobile']").val().trim() && !isEmpty){
+      var isValidMobileNumber = validateMobile($(".form_input_h[name='mobile']").val().trim());
+      if(!isValidMobileNumber) showErrorMsg("* Please enter a correct mobile number.");
+    }
+
+    if ($(".form_input_h[name='email']").val().trim() && !isEmpty) {
+      var isValidEmail = checkValidEmail($(".form_input_h[name='email']").val().trim());
+      if(isValidEmail) matchConfirmEmail($(".form_input_h[name='email']").val().trim(), $(".form_input_h[name='confirm_email']").val().trim());
+      else showErrorMsg("* Please enter a valid email address.");
+    }
   });
 }
 
-function showErrorMsg(index) {
-  var msg;
+function checkValidEmail(email) {
+  var emailPattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9\_]+\.)+[a-zA-Z]{2,}))$/;
+  var isValid = false;
+  if (emailPattern.test(email)) isValid = true
+  return isValid;
+
+}
+
+function matchConfirmEmail(email, confirm_email){
+  if(email.trim() != confirm_email.trim()) showErrorMsg("* Please match email and confirm-email");
+}
+
+function validateMobile(mobile_number){
+  var pattern = /[0-9]+/g;
+  var isValidNumber = false;
+  if(mobile_number.length == 10 && pattern.test(mobile_number)) isValidNumber = true;
+  return isValidNumber;
+}
+
+function checkErrorMsg(index) {
+  var msg = "";
   _.each(index, function(val) {
-    if(val == 0 || val == 1) msg = "full name, ";
-    if(val == 2) msg += "email, ";
-    if(val == 4) msg += "mobile number, ";
+    if (val == 0 || val == 1) msg = "full name, ";
+    if (val == 2) msg += "email, ";
+    if (val == 4) msg += "mobile number, ";
   });
   msg = msg.slice(0, -2);
   msg += ".";
-  $(".error_msg").html("* Please enter your " + msg);
+  showErrorMsg("* Please enter your " + msg);
 }
 
-function removeErrorMessages() {
+function showErrorMsg(msg) {
+  $(".error_msg").html(msg);
+}
+
+function clearErrorMessages() {
   $(".error_msg").html("");
 }
 
