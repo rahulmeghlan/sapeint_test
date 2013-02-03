@@ -14,7 +14,8 @@
     width: 55%;
     border: 1px solid #efefef;
     margin-left: 15%;
-    margin-top: -1%;}
+    margin-top: -1%;
+}
 
 .clear {
     clear: both;
@@ -49,7 +50,7 @@
 
 .enrollmentForm_container .header_area {
     background: #d9d9d9;
-    color:#515151;
+    color: #515151;
     padding: 3px 0 4px 9px;
     font-family: Helvetica, sans-serif;
     font-size: 12px;
@@ -60,15 +61,16 @@
 .form_area {
     text-overflow: ellipsis;
     overflow: hidden;
-    border:1px solid #acacac;
-    border-top:none;
+    border: 1px solid #acacac;
+    border-top: none;
 }
 
 input[type=submit] {
     float: right;
-    margin-top: 3%;
-    border: 0px;
     background: #efefef;
+    float: right;
+    margin-top: 0%;
+    border: 1px solid #000;
 }
 
 .enroll_now_h {
@@ -79,7 +81,7 @@ input[type=submit] {
     background: #d5d5d5;
 }
 
-.carousal_navigation_header{
+.carousal_navigation_header {
     background: #efefef;
     min-height: 20px;
 }
@@ -111,3 +113,18 @@ thead {
     background: #e1e1e1;
 }
 
+#enrollmentForm div {
+    padding: 3%;
+    padding-bottom: 0;
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+#enrollmentForm input[type=text] {
+    width: 20%;
+    position: absolute;
+    left: 30%;
+}
+
+.submit_btn{
+}
