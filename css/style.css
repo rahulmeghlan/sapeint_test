@@ -44,16 +44,24 @@
 .carousal_text_items {
     text-overflow: ellipsis;
     overflow: hidden;
-    width: 100%
+    /*width: 100%*/
 }
 
 .enrollmentForm_container .header_area {
-    background: #efefef;
+    background: #d9d9d9;
+    color:#515151;
+    padding: 3px 0 4px 9px;
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid #acacac;
 }
 
 .form_area {
     text-overflow: ellipsis;
     overflow: hidden;
+    border:1px solid #acacac;
+    border-top:none;
 }
 
 input[type=submit] {
@@ -87,7 +95,7 @@ body {
 }
 
 .content_area {
-    margin-top: 2%;
+    /*margin-top: 2%;*/
 }
 
 table {
