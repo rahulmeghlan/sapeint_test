@@ -23,8 +23,8 @@
 }
 
 .carousal_navigation {
-    margin-top: 2%;
-    border: 1px solid red;
+    margin-top: 8%;
+    border: 1px solid #efefef;
 }
 
 .user_list {
@@ -70,6 +70,11 @@ input[type=submit] {
     bottom: 0px;
     border: 1px solid #000;
     margin-left: 5%
+}
+
+.carousal_navigation_header{
+    background: #efefef;
+    min-height: 20px;
 }
 
 .error_msg {
