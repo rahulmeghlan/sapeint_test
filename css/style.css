@@ -11,12 +11,10 @@
 }
 
 .enrollmentForm_container {
-    width: 65%;
-    height: 200px;
+    width: 55%;
     border: 1px solid #efefef;
-    margin-left: 21%;
-    margin-top: 3%;
-}
+    margin-left: 15%;
+    margin-top: -1%;}
 
 .clear {
     clear: both;
@@ -85,6 +83,7 @@ input[type=submit] {
 
 body {
     padding-left: 1%;
+    color: #909090;
 }
 
 .content_area {
@@ -103,3 +102,4 @@ tr {
 thead {
     background: #e1e1e1;
 }
+
