@@ -133,17 +133,19 @@ function validateForm() {
 }
 
 function showErrorMsg(index) {
-  removeErrorMessages();
+  var msg;
   _.each(index, function(val) {
-    if (val == 0) $("form .name").append("<span class='error_msg'>* Please enter your full name</span>")
-    if (val == 2) $("form .email").append("<span class='error_msg'>* Please enter your email</span>")
-    if (val == 3) $("form .confirm_email").append("<span class='error_msg'>* Please re-enter your email</span>")
-    if (val == 4) $("form .mobile_number").append("<span class='error_msg'>* Please enter your mobile number</span>")
+    if(val == 0 || val == 1) msg = "full name, ";
+    if(val == 2) msg += "email, ";
+    if(val == 4) msg += "mobile number, ";
   });
+  msg = msg.slice(0, -2);
+  msg += ".";
+  $(".error_msg").html("* Please enter your " + msg);
 }
 
 function removeErrorMessages() {
-  $(".error_msg").remove();
+  $(".error_msg").html("");
 }
 
 function checkEmail() {
