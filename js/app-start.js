@@ -3,6 +3,7 @@ $(document).ready(function(){
   insertCarousalNavigation();
   $('#carousal_items').tinycarousel();
   navigateCarousal();
+  checkEnrollmentInfo();
 });
 function insertHeader(){
   var content;
@@ -41,6 +42,64 @@ function navigateCarousal(){
 }
 
 function callCarousal(navigateTo){
+  getCourseDetails(navigateTo);
   if(navigateTo == 0) navigateTo = 1;
   $("#carousal_items").tinycarousel_move(navigateTo);
+}
+
+function checkEnrollmentInfo(){
+  $(".enroll_now_h").click(function(e){
+    fillForm($(e.target).attr("item_info"))
+  })
+}
+
+function fillForm(enrollment_type){
+  var courseName;
+  switch(enrollment_type){
+    case "1":
+        courseName = "Distinguished Technologies";
+      break;
+    case "2":
+      courseName = "Mobile Solutions";
+      break;
+    case "3":
+      courseName = "HTML-5 Canvas";
+      break;
+    case "4":
+      courseName = "Domain Expertise";
+      break;
+    default :
+      break;
+  }
+  $(".course_name").html(courseName);
+}
+
+function getCourseDetails(courseID){
+//  var url = "";
+//  switch(courseID){
+//    case "1":
+//      break
+//    case "2":
+//      break
+//    case "3":
+//      break
+//    case "4":
+//      break
+//    default :
+//      break
+//  }
+//  $.ajax({
+//    url : url,
+//    success:function(response){
+//      console.log(">>>> Checking the response in the success state : ");
+//      console.log(response);
+//      $(".carousal_text_area").html(info.text);
+//    },
+//    error:function(response){
+//      console.log(">>>> Checking the response in the error state : ");
+//      console.log(response);
+//    }
+//  });
+  $(".carousal_text_area").html(info.text);
+
 }

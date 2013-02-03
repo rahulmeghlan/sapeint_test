@@ -64,3 +64,10 @@ input[type=submit]{
     border: 0px;
     background: #efefef;
 }
+
+.enroll_now_h{
+    position: absolute;
+    bottom: 0px;
+    border:1px solid #000;
+    margin-left: 5%
+}
