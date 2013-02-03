@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Sapient Test Project</title>
+    <!--Library files-->
+    <script type="text/javascript" src="js/libs/jquery.js"></script>
+    <script type="text/javascript" src="js/libs/underscore.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.tinycarousel.min.js"></script>
+    <!--Stylesheet-->
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/carousal.css"/>
+    <!--JSON Files-->
+    <script type="text/javascript" src="js/db_files/json_items.js"></script>
+
+    <script type="text/javascript" src="js/app-start.js"></script>
+</head>
+<body>
+
+</body>
+<div class="left_container">
+    <div class="user_list"></div>
+    <div class="carousal_navigation"></div>
+</div>
+<div class="carousal_container">
+    <div class="carousal_image_area" style="padding-left: 9%">
+        <div id="carousal_items" style="height: 100%">
+            <a class="buttons prev" href="#">left</a>
+            <div class="viewport" style="width: 480px">
+                <ul class="overview">
+                    <li class="item1 item_h" onclick="callCarousal(1)">Rahul 1</li>
+                    <li class="item2 item_h" onclick="callCarousal(2)">Rahul 2</li>
+                    <li class="item3 item_h" onclick="callCarousal(3)">Rahul 3</li>
+                    <li class="item4 item_h" onclick="callCarousal(4)">Rahul 4</li>
+                </ul>
+            </div>
+            <a class="buttons next" href="#">right</a>
+        </div>
+    </div>
+    <div class="carousal_text_area"></div>
+</div>
+<div style="clear: both;"></div>
+
+<div class="enrollmentForm_container">
+    <div class="header_area">
+        Enroll Now  : <span class="course_name"></span>
+    </div>
+    <div class="form_area">
+        <form method="post" name="enrollmentForm" id="enrollmentForm">
+            <div class="name">
+                Full Name
+                <input type="text" name="first_name" style="position: absolute;left:50%"/>
+                <input type="text" name="last_name"  style="position: absolute;left:62%" />
+
+            </div>
+            <div class="email">
+                Email Address
+                <input type="text" name="email" style="position: absolute;left:50%" />
+            </div>
+            <div class="confirm_email">
+               Confirm Email Address
+                <input type="text" name="confirm_email" style="position: absolute;left:50%"/>
+            </div>
+            <div class="mobile_number">
+                Mobile Number
+                <input type="text" name="mobile" style="position: absolute;left:50%"/>
+            </div>
+            <input type="submit" class="submit_btn">
+        </form>
+    </div>
+</div>
+
+
+</html>
